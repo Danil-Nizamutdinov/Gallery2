@@ -1,0 +1,46 @@
+:root {
+  --primary-white: #fff;
+  --primary-black: #121212;
+  --primary-light-gray: #dedede;
+  --primary-dark-gray: #575757;
+
+  --secondary-white: #fcfcfc;
+  --secondary-black: #1a1818;
+  --secondary-gray: #9c9c9c;
+
+  --accent-red: #9b4b4b;
+  --accent-gold: #ab8956;
+
+  --background-color-theme1: var(--primary-black);
+  --background-color-theme2: var(--primary-white);
+
+  --font-color-theme1: var(--primary-light-gray);
+  --font-color-theme2: var(--primary-dark-gray);
+
+  --background-color-input-theme1: var(--secondary-black);
+  --background-color-input-theme2: var(--primary-white);
+
+  --input-border-color-theme1: var(--secondary-black);
+  --input-border-color-theme2: var(--primary-light-gray);
+
+  --font-color-year-theme1: var(--accent-gold);
+  --font-color-year-theme2: var(--accent-red);
+
+  --input-placeholder-theme1: var(--primary-dark-gray);
+  --input-placeholder-theme2: var(--secondary-gray);
+
+  --painting-title-theme1: var(--primary-light-gray);
+  --painting-title-theme2: var(--primary-black);
+
+  --background-pagination-theme1: var(--secondary-black);
+  --background-pagination-theme2: var(--primary-light-gray);
+
+  --background-color: var(--background-color-theme1);
+  --background-color-input: var(--background-color-input-theme1);
+  --input-border-color: var(--input-border-color-theme1);
+  --font-color: var(--font-color-theme1);
+  --font-color-year: var(--font-color-year-theme1);
+  --input-placeholder: var(--input-placeholder-theme1);
+  --painting-title: var(--painting-title-theme1);
+  --background-pagination: var(--background-pagination-theme1);
+}

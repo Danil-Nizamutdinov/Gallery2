@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.logo * {
+  fill: var(--font-color);
+}
+
+.button_dark {
+  background-color: var(--secondary-black);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.button_light {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s all;
+  @media (hover: hover) {
+    &:hover {
+      background: var(--primary-light-gray);
+    }
+  }
+}
+
+.light_icon * {
+  fill: #fff;
+}

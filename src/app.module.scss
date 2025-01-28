@@ -1,3 +1,9 @@
-body {
-  margin: 0;
+@use './style/vars' as *;
+
+.container {
+  margin: 0 20px;
+  @media (min-width: $desktop) {
+    width: 1240px;
+    margin: 0 auto;
+  }
 }

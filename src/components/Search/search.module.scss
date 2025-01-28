@@ -1,0 +1,77 @@
+@use 'src/style/vars' as *;
+
+.search {
+  margin-top: 54px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input_box {
+  position: relative;
+}
+
+.input {
+  background-color: var(--background-color-input);
+  border-radius: 4px;
+  width: 280px;
+  height: 33px;
+  border: 1px solid var(--input-border-color);
+  padding: 0 40px 0 40px;
+  color: var(--font-color);
+
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
+  &:focus {
+    border: 1px solid var(--font-color);
+  }
+  @media (min-width: $mobile) {
+    width: 296px;
+    height: 36px;
+    font-size: 14px;
+  }
+  @media (min-width: $desktop) {
+    width: 336px;
+  }
+}
+
+.button {
+  position: absolute;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  background: none;
+  border: none;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--font-color);
+    border-radius: 4px;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
+
+.search_icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search_icon * {
+  fill: var(--font-color);
+}

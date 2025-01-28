@@ -1,0 +1,92 @@
+@use 'src/style/vars' as *;
+
+.painting_box {
+  position: relative;
+  // height: max-content;
+  overflow: hidden;
+  @media (hover: hover) {
+    &:hover {
+      .painting_info {
+        opacity: 0;
+        top: 120px;
+      }
+
+      .painting_info2 {
+        opacity: 1;
+        left: 20px;
+      }
+
+      .painting {
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+.painting {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.painting_info_box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--background-color);
+  height: 30%;
+  width: 85%;
+
+  @media (min-width: $desktop) {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 42px;
+      width: 2px;
+      background-color: var(--font-color-year);
+    }
+  }
+}
+
+.painting_info {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.6s ease;
+}
+
+.painting_title {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--painting-title);
+  margin-bottom: 5px;
+
+  @media (min-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.painting_subtitle {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--font-color-year);
+
+  @media (min-width: $mobile) {
+    font-size: 12px;
+  }
+}
+
+.painting_info2 {
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: 0.6s ease;
+}
