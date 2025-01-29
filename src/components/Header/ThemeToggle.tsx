@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LightIcon from 'src/assets/img/light_icon.svg?react';
 import DarkIcon from 'src/assets/img/dark_icon.svg?react';
 import styles from './header.module.scss';
-import getInitialTheme from '../Helper/getInitialTheme';
+import getInitialTheme from './getInitialTheme';
 
 const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<string>(getInitialTheme());

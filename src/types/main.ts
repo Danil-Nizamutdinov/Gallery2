@@ -23,3 +23,8 @@ export interface AxiosResPainting {
   res: IPainting[];
   totalCount: number;
 }
+
+export interface IPages {
+  id: number;
+  page: number | string;
+}

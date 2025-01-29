@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './paginationBar.module.scss';
-import CustomPagination from './CustomPagination';
+import Pagination from './Pagination/Pagination';
 
 interface PaginationBarProps {
   count: number;
   page: number;
-  setPage: any;
+  setPage: (value: number) => void;
 }
 
 const PaginationBar: React.FC<PaginationBarProps> = ({
@@ -13,20 +13,11 @@ const PaginationBar: React.FC<PaginationBarProps> = ({
   page,
   setPage,
 }) => {
-  const newCount: number = Math.ceil(count / 6);
+  const totalPages: number = Math.ceil(count / 6) + 3;
 
   return (
     <div className={styles.pagination}>
-      <CustomPagination
-        count={newCount}
-        page={page}
-        onChange={(_, num) => setPage(num)}
-        shape="rounded"
-        sx={{ marginY: '40px' }}
-        size="small"
-        siblingCount={1}
-        boundaryCount={1}
-      />
+      <Pagination totalPages={totalPages} page={page} setPage={setPage} />
     </div>
   );
 };
