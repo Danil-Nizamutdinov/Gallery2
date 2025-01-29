@@ -3,13 +3,14 @@ import {
   useGetAuthorsQuery,
   useGetLocationsQuery,
 } from 'src/services/GalleryService';
-import { IAuthor, ILocation, IPainting } from 'src/types/main';
+import { IPainting } from 'src/types/main';
 import Painting from './Painting/Painting';
 import styles from './gallery.module.scss';
 import NoMatches from './NoMatches/NoMatches';
+import generateNewPaintings from './generateNewPaintings';
 
 interface GalleryProps {
-  paintings: IPainting[] | undefined;
+  paintings: IPainting[];
 }
 
 const Gallery: React.FC<GalleryProps> = ({ paintings }) => {
@@ -21,20 +22,17 @@ const Gallery: React.FC<GalleryProps> = ({ paintings }) => {
     return <div>Loading...</div>;
   }
 
-  if (paintings && paintings?.length < 1) return <NoMatches />;
+  if (paintings && paintings.length < 1) return <NoMatches />;
 
-  const newPaintings = paintings?.map((painting) => ({
-    ...painting,
-    author: authors?.find((author: IAuthor) => author.id === painting.authorId),
-    location: locations?.find(
-      (location: ILocation) => location.id === painting.locationId
-    ),
-  }));
+  const newPaintings: IPainting[] | boolean =
+    authors && locations
+      ? generateNewPaintings(paintings, authors, locations)
+      : false;
 
   return (
     <div className={styles.gallery}>
-      {paintings &&
-        newPaintings?.map((p: IPainting) => (
+      {newPaintings &&
+        newPaintings.map((p: IPainting) => (
           <Painting painting={p} key={p.id} />
         ))}
     </div>

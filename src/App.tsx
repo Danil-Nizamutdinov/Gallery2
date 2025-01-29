@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <div className={styles.container}>
       <Header />
       <Search title={title} setTitle={setTitle} />
-      <Gallery paintings={data?.res} />
+      {data && <Gallery paintings={data?.res} />}
       {data && !title && (
         <PaginationBar
           count={Number(data.totalCount)}
