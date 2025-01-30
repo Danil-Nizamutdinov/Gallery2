@@ -37,5 +37,6 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
 };
